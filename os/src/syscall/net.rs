@@ -87,8 +87,9 @@ pub fn sys_socket(domain: usize, types: i32, _protocol: usize) -> SysResult {
     }
 
     let types = SocketType::try_from(types as i32)?;
-    if types != SocketType::STREAM  || types != SocketType::DGRAM {
-        //todo: temp meausure for protocol check
+    // NOTE: was `||`, which is always true (a value cannot be both STREAM and
+    // DGRAM), so every socket() failed with EPROTONOSUPPORT. Correct form is `&&`.
+    if types != SocketType::STREAM && types != SocketType::DGRAM {
         return Err(SysError::EPROTONOSUPPORT);
     }
     let socket = socket::Socket::new(domain,types, nonblock);
