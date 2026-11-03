@@ -810,61 +810,117 @@ pub async fn sys_recvmsg(
 }
 
 pub fn sockaddr_reader(addr: usize, addr_len: usize, task: &Arc<TaskControlBlock>) -> Result<SockAddr, SysError> {
-    let addr = *(UserPtrRaw::new(addr as *const SockAddr)
-    .ensure_read(&mut task.get_vm_space().lock())
-    .ok_or(SysError::EFAULT)?)
-    .to_ref();
-    let family = unsafe {
-        SaFamily::try_from(addr.family)?
+    if addr == 0 {
+        return Err(SysError::EFAULT);
+    }
+    // 先只读前两个字节拿到 family。
+    // 注意：SockAddr 是 union，sizeof 等于最大的 SockAddrUn（110 字节）。
+    // 若直接按 union 大小去读，会把用户 16 字节的 sockaddr_in 之后的内存一并读进来
+    // （越界读，缓冲区正好在页尾时还会误报 EFAULT）。所以先读 family，再按类型读。
+    let family_raw = unsafe {
+        *(UserPtrRaw::new(addr as *const u16)
+            .ensure_read(&mut task.get_vm_space().lock())
+            .ok_or(SysError::EFAULT)?)
+        .to_ref()
     };
+    let family = SaFamily::try_from(family_raw)?;
     log::info!("[sockaddr_reader] family: {:?}, addr_len: {}", family, addr_len);
     match family {
         SaFamily::AfInet => {
             if addr_len < size_of::<SockAddrIn4>() {
                 return Err(SysError::EINVAL);
             }
-            return Ok(addr);
+            let sin = unsafe {
+                *(UserPtrRaw::new(addr as *const SockAddrIn4)
+                    .ensure_read(&mut task.get_vm_space().lock())
+                    .ok_or(SysError::EFAULT)?)
+                .to_ref()
+            };
+            Ok(SockAddr { ipv4: sin })
         }
         SaFamily::AfInet6 => {
             if addr_len < size_of::<SockAddrIn6>() {
                 return Err(SysError::EINVAL);
             }
-            Ok(addr)
+            let sin6 = unsafe {
+                *(UserPtrRaw::new(addr as *const SockAddrIn6)
+                    .ensure_read(&mut task.get_vm_space().lock())
+                    .ok_or(SysError::EFAULT)?)
+                .to_ref()
+            };
+            Ok(SockAddr { ipv6: sin6 })
         },
         SaFamily::AfUnix => {
             if addr_len < size_of::<SockAddrUn>() {
                 log::info!("in this, size of SockAddrUn: {}",size_of::<SockAddrUn>());
                 return Err(SysError::EINVAL);
             }
-           Ok(addr)
+            let sun = unsafe {
+                *(UserPtrRaw::new(addr as *const SockAddrUn)
+                    .ensure_read(&mut task.get_vm_space().lock())
+                    .ok_or(SysError::EFAULT)?)
+                .to_ref()
+            };
+            Ok(SockAddr { unix: sun })
         },
-        _ => todo!()
+        _ => Err(SysError::EAFNOSUPPORT)
     }
 }
 
 pub fn sockaddr_writer(task: &Arc<TaskControlBlock>, addr: usize, addr_len: usize, sock_addr: SockAddr) -> SockResult<()>{
-    let addr =  UserPtrRaw::new(addr as *const SockAddr)
+    if addr == 0 {
+        return Err(SysError::EFAULT);
+    }
+    // Linux 语义：*addr_len 是入参（用户缓冲区大小）+ 出参（回写实际结构体长度）
+    let len_ptr = UserPtrRaw::new(addr_len as *const u32)
         .ensure_write(&mut task.get_vm_space().lock())
         .ok_or(SysError::EFAULT)?;
-    let addr_len = UserPtrRaw::new(addr_len as *const u32)
-        .ensure_write(&mut task.get_vm_space().lock())
-        .ok_or(SysError::EFAULT)?;
-    unsafe {
-        match SaFamily::try_from(sock_addr.family).unwrap() {
+    let user_len = unsafe { *len_ptr.to_ref() } as usize;
+
+    // 修复：SockAddr 是 union，sizeof 等于最大的 SockAddrUn（110 字节）。
+    // 之前无条件 `write(sock_addr)` 会把整个 union 写回用户缓冲区，
+    // 在用户只提供 16 字节 struct sockaddr_in 时溢出 94 字节，
+    // 直接踩坏用户栈（libctest 的 socket 用例里被覆盖的正是 buf[0]），
+    // 同时把内核栈上的残留字节泄露给用户态。
+    // 这里先按 family 序列化出精确大小，再按 min(*addr_len, size) 拷出。
+    let mut tmp = [0u8; size_of::<SockAddrUn>()];
+    let size = unsafe {
+        match SaFamily::try_from(sock_addr.family)? {
             SaFamily::AfInet => {
-                addr.write(sock_addr);
-                addr_len.write(size_of::<SockAddrIn4>() as u32);
+                let v = sock_addr.ipv4;
+                let n = size_of::<SockAddrIn4>();
+                tmp[..n].copy_from_slice(core::slice::from_raw_parts(
+                    &v as *const SockAddrIn4 as *const u8, n));
+                n
             }
             SaFamily::AfInet6 => {
-                addr.write(sock_addr);
-                addr_len.write(size_of::<SockAddrIn6>() as u32);
+                let v = sock_addr.ipv6;
+                let n = size_of::<SockAddrIn6>();
+                tmp[..n].copy_from_slice(core::slice::from_raw_parts(
+                    &v as *const SockAddrIn6 as *const u8, n));
+                n
             },
             SaFamily::AfUnix => {
-                addr.write(sock_addr);
-                addr_len.write(size_of::<SockAddrUn>() as u32);
+                let v = sock_addr.unix;
+                let n = size_of::<SockAddrUn>();
+                tmp[..n].copy_from_slice(core::slice::from_raw_parts(
+                    &v as *const SockAddrUn as *const u8, n));
+                n
             },
-            _ => todo!()
+            _ => return Err(SysError::EAFNOSUPPORT)
         }
+    };
+    let copy_len = if user_len < size { user_len } else { size };
+    if copy_len > 0 {
+        unsafe {
+            let out = UserSliceRaw::new(addr as *const u8, copy_len)
+                .ensure_write(&mut task.get_vm_space().lock())
+                .ok_or(SysError::EFAULT)?;
+            out.to_mut().copy_from_slice(&tmp[..copy_len]);
+        }
+    }
+    unsafe {
+        len_ptr.write(size as u32);
     }
     Ok(())
 }
