@@ -1,0 +1,1882 @@
+
+[x] 为通过的测例或者部分通过
+
+需要标注出哪些可以通过，但是没有 Summary
+
+- [ ] abort01
+- [ ] abs01
+- [x] accept01
+- [ ] accept02 ：要添加socket选项（set_sockopts）
+- [ ] accept03 : 在openat直接寄掉
+- [x] accept4_01 :2 pass 2 fail 2 skip
+- [x] access01: 107 pass failed 92
+- [x] access02: 12 pass failed 4
+- [x] access03
+- [ ] access04 : symlink broken
+- [ ] acct01 : symlink broken
+- [ ] acct02
+- [ ] acct02_helper
+- [ ] acl1
+- [ ] add_ipv6addr
+- [x] add_key01 : 4 pass 4 fail
+- [ ] add_key02 : all failed
+- [ ] add_key03
+- [x] add_key04
+- [ ] add_key05
+- [x] adjtimex01
+- [ ] adjtimex02
+- [ ] adjtimex03
+- [ ] af_alg01   af_log: unimplemented safamily
+- [ ] af_alg02
+- [ ] af_alg03
+- [ ] af_alg04
+- [ ] af_alg05
+- [ ] af_alg06
+- [ ] af_alg07
+- [ ] aio01: no summary
+- [ ] aio02
+- [ ] aiocp
+- [ ] aiodio_append
+- [ ] aiodio_sparse
+- [ ] aio-stress
+- [x] alarm02
+- [x] alarm03
+- [x] alarm05
+- [x] alarm06
+- [x] alarm07
+- [ ] arch_prctl01
+- [ ] asapi_01
+- [ ] asapi_02
+- [ ] asapi_03
+- [ ] aslr01
+- [ ] atof01
+- [ ] autogroup01
+- [x] bind01
+- [ ] bind02: /etc/group not exist
+- [ ] bind03: /unix broken
+- [x] bind04: pass 9 failed 7 , failed ipv6 handle
+- [ ] bind05: still broken in ipv6
+- [ ] bind06
+- [ ] block_dev
+- [x] bpf_map01: pass 5 faile 4 broken 1
+- [ ] bpf_prog01
+- [ ] bpf_prog02
+- [ ] bpf_prog03
+- [ ] bpf_prog04
+- [ ] bpf_prog05
+- [ ] bpf_prog06
+- [ ] bpf_prog07
+- [ ] brk01     TFAIL: brk() failed to set address have 0x45fff expected 0x44000
+- [ ] brk02
+- [ ] cacheflush01: no summary
+- [ ] can_bcm01
+- [ ] can_filter
+- [ ] can_rcv_own_msgs
+- [ ] cap_bounds_r
+- [ ] cap_bounds_rw
+- [ ] cap_bset_inh_bounds
+- [x] capget01
+- [ ] capget02:  /proc/sys/kernel/pid_max, not exist
+- [ ] capset03
+- [ ] capset04
+- [ ] cfs_bandwidth01
+- [ ] cgroup_core01
+- [ ] cgroup_core02
+- [ ] cgroup_core03
+- [ ] cgroup_regression_fork_processes
+- [ ] cgroup_regression_getdelays
+- [ ] cgroup_xattr
+- [ ] chdir01: TBROK: Failed to acquire device
+- [x] chdir04
+- [ ] check_envval
+- [ ] check_icmpv4_connectivity
+- [ ] check_icmpv6_connectivity
+- [ ] check_keepcaps
+- [ ] check_netem
+- [ ] check_pe
+- [ ] check_setkey
+- [ ] check_simple_capset
+- [x] chmod01
+- [x] chmod03：
+- [ ] chmod05：cannot open /etc/group, not exist,Syscall number not included: 159
+- [ ] chmod06：symlink(test_file4,test_file5) failed: ENOENT (2)
+- [ ] chmod07：getgrnam(users) failed - try fallback daemon
+- [x] chown01
+- [x] chown02
+- [x] chown03
+- [ ] chown04：需要实现链接悬垂引用
+- [x] chown05：需要修改 uid gid
+- [ ] chroot01-04：需要支持修改 root path
+- [ ] clock_adjtime01
+- [ ] clock_adjtime02
+- [x] clock_getres01: pass 40 failed 4 
+- [ ] clock_gettime01: Failed to open FILE '/proc/self/stat' for reading: ENOENT (2)
+- [x] clock_gettime02: 
+- [ ] clock_gettime03: TBROK: Cannot parse kernel .config
+- [ ] clock_gettime04: fopen(/proc/cpuinfo,r) failed: ENOENT (2)
+- [x] clock_nanosleep01: failed 8 
+- [ ] clock_nanosleep02: TBROK: fopen(/proc/cpuinfo,r) failed: ENOENT (2)
+- [ ] clock_nanosleep03
+- [x] clock_nanosleep04
+- [ ] clock_settime01: skip
+- [ ] clock_settime02
+- [ ] clock_settime03
+- [x] clone01
+- [ ] clone02: no summary
+- [x] clone03
+- [ ] clone04: tst_test.c:1677: TBROK: Test killed by SIGSEGV
+- [ ] clone05: exit_code 0 expected 1
+- [x] clone06
+- [ ] clone07
+- [ ] clone08
+- [ ] clone09
+- [ ] clone301: todo! pidfd support 
+- [ ] clone302: can't handle page fault
+- [ ] clone303
+- [x] close01
+- [x] close02
+- [ ] close_range01：No Free Device
+- [ ] close_range02：TCONF
+- [x] confstr01
+- [ ] connect01: no_summary
+- [ ] connect02: Failed to open FILE '/proc/sys/kernel/tainted
+- [ ] copy_file_range01
+- [ ] copy_file_range02
+- [ ] copy_file_range03
+- [ ] cpuacct_task
+- [ ] cpuctl_def_task01: panic
+- [ ] cpuctl_def_task02
+- [ ] cpuctl_def_task03
+- [ ] cpuctl_def_task04
+- [ ] cpuctl_fj_cpu-hog
+- [ ] cpuctl_fj_simple_echo
+- [ ] cpuctl_latency_check_task
+- [ ] cpuctl_latency_test
+- [ ] cpuctl_test01: panic
+- [ ] cpuctl_test02
+- [ ] cpuctl_test03
+- [ ] cpuctl_test04
+- [ ] cpufreq_boost
+- [ ] cpuhotplug_do_disk_write_loop
+- [ ] cpuhotplug_do_kcompile_loop
+- [ ] cpuhotplug_do_spin_loop
+- [ ] cpuhotplug_report_proc_interrupts
+- [ ] cpuset01: no summary
+- [ ] crash01: no summary, pass
+- [ ] crash02: many syscall lack
+- [x] creat01: pass 4 failed 2
+- [x] creat03
+- [ ] creat04: should not remove when unlink a inode ref by sth
+- [x] creat05
+- [ ] creat06: 悬垂引用
+- [ ] creat07: failed to copy
+- [ ] creat07_child: failed
+- [x] creat08: pass 2 faild 7 
+- [ ] creat09: no device
+- [ ] crypto_user01: socket(16, 524290, 21) failed: EINVAL (22)
+- [ ] crypto_user02
+- [ ] cve-2014-0196
+- [ ] cve-2015-3290
+- [ ] cve-2016-10044
+- [ ] cve-2016-7042
+- [ ] cve-2016-7117
+- [ ] cve-2017-16939
+- [ ] cve-2017-17052
+- [ ] cve-2017-17053
+- [ ] cve-2017-2618
+- [ ] cve-2017-2671
+- [ ] cve-2022-4378
+- [ ] data
+- [ ] datafiles
+- [ ] data_space: pass,no summary
+- [ ] delete_module01
+- [ ] delete_module02
+- [ ] delete_module03
+- [ ] dio_append
+- [ ] dio_read
+- [x] dio_sparse
+- [ ] diotest1: no summary pass, same as follows
+- [ ] diotest2
+- [ ] diotest3
+- [ ] diotest4
+- [ ] diotest5
+- [ ] diotest6
+- [ ] dio_truncate: broken
+- [ ] dirty: no summary
+- [x] dirtyc0w: cannot open /proc/self/mem, not exist,same flaw as follows
+- [ ] dirtyc0w_child
+- [ ] dirtyc0w_shmem
+- [ ] dirtyc0w_shmem_child
+- [ ] dirtypipe: failed
+- [ ] dma_thread_diotest
+- [ ] doio
+- [x] dup01
+- [x] dup02
+- [x] dup03
+- [x] dup04
+- [ ] dup05: no mknod
+- [x] dup06
+- [x] dup07
+- [x] dup201: failed 2 pass 2
+- [x] dup202
+- [x] dup203
+- [x] dup204
+- [ ] dup205: fail
+- [x] dup206
+- [x] dup207
+- [x] dup3_01
+- [x] dup3_02
+- [ ] ebizzy: no summary, 性能测试
+- [ ] eject_check_tray
+- [ ] endian_switch01
+- [x] epoll_create01: no syscall, p 2 b 2 skip 1
+- [ ] epoll_create02: failed
+- [x] epoll_create1_01: p1 failed 1
+- [ ] epoll_create1_02: failed
+- [ ] epoll_ctl01: failed
+- [ ] epoll_ctl02: failed
+- [x] epoll_ctl03: do nothing but pass 256 :(
+- [ ] epoll_ctl04： failed
+- [ ] epoll_ctl05: failed
+- [ ] epoll-ltp
+- [ ] epoll_pwait01: panic
+- [ ] epoll_pwait02: faild ,441, same sa follows
+- [ ] epoll_pwait03
+- [ ] epoll_pwait04
+- [ ] epoll_pwait05
+- [ ] epoll_wait01
+- [ ] epoll_wait02
+- [ ] epoll_wait03
+- [ ] epoll_wait04
+- [ ] epoll_wait05
+- [ ] epoll_wait06
+- [ ] epoll_wait07
+- [ ] eventfd01: can't locate kernel config
+- [ ] eventfd02
+- [ ] eventfd03
+- [ ] eventfd04
+- [ ] eventfd05
+- [ ] eventfd06
+- [ ] eventfd2_01
+- [ ] eventfd2_02
+- [ ] eventfd2_03
+- [ ] event_generator
+- [ ] evm_overlay.sh
+
+=========exec============
+- [x] execl01
+- [ ] execl01_child: LTP_IPC_PATH is not defined
+- [x] execle01
+- [ ] execle01_child
+- [x] execlp01
+- [ ] execlp01_child
+- [x] execv01
+- [ ] execv01_child
+- [x] execve01
+- [ ] execve01_child
+- [ ] execve02: failed to copy
+- [x] execve03: pass 3 failed 3, 似乎是错误判断位置的问题
+- [ ] execve04: failed to copy
+- [ ] execve05 : failed to copy
+- [ ] execve06: Child (5) killed by signal SIGSEGV
+- [ ] execve06_child
+- [ ] execveat01: failed to copy
+- [ ] execveat02: failed to copy
+- [ ] execveat03: /dev/loop-control, not exist
+- [ ] execveat_child
+- [ ] execveat_errno
+- [ ] execve_child
+- [x] execvp01
+- [ ] execvp01_child
+- [ ] exec_with_inh
+- [ ] exec_without_inh
+- [x] exit01: no summary pass
+- [x] exit02
+- [x] exit_group01
+==============================
+
+- [ ] f00f
+- [x] faccessat01
+- [x] faccessat02
+- [x] faccessat201
+- [x] faccessat202: pass 5 failed 1
+- [ ] fallocate01：需要支持 fallocate: 调整文件在内存分布？且没有 summary
+- [ ] fallocate02：没有 summary
+- [x] fallocate03
+- [ ] fallocate04：似乎需要 /dev/ 支持？
+- [ ] fallocate05：同上
+- [ ] fallocate06：同上
+- [ ] fanotify01：需要设备
+- [ ] fanotify02：卡死
+- [ ] fanotify03：需要设备
+- [x] fanotify04：有概率卡住
+- [ ] fanotify05：需要设备
+- [ ] fanotify06：需要设备
+- [ ] fanotify07：可能需要正确实现该系统调用
+- [x] fanotify08：试图关闭 fd0
+- [ ] fanotify09-23：需要设备/关闭fd0/管道问题？
+- [ ] fanout01
+- [x] fchdir01
+- [x] fchdir02
+- [ ] fchdir03：permission?
+- [x] fchmod01
+- [ ] fchmod02：etgrnam(daemon) failed: ENOENT (2)
+- [x] fchmod03
+- [x] fchmod04
+- [ ] fchmod05：Couldn't change supplementary group Id
+- [x] fchmod06：类似上面的错误 pass 1 failed 2
+- [x] fchmodat01
+- [x] fchmodat02
+- [x] fchown01
+- [x] fchown02
+- [x] fchown03
+- [x] fchown04: should failed on some points pass 1 failed 2
+- [x] fchown05
+- [x] fchownat01
+- [x] fchownat02
+
+======= fcntl ========
+- [ ] fcntl01：没有输出
+- [ ] fcntl01_64
+- [x] fcntl02：
+- [x] fcntl02_64
+- [x] fcntl03
+- [x] fcntl03_64
+- [x] fcntl04
+- [x] fcntl04_64
+- [x] fcntl05：需要支持 flock,faild 1 pass 5
+- [x] fcntl05_64
+- [ ] fcntl07：需要支持用户 mknod
+- [ ] fcntl07_64
+- [x] fcntl08
+- [x] fcntl08_64
+- [x] fcntl09: no summary
+- [x] fcntl09_64: no summary
+- [x] fcntl10: no summary
+- [x] fcntl10_64: no summary
+- [ ] fcntl11：需要支持 flock
+- [ ] fcntl11_64：需要支持 flock
+- [x] fcntl12
+- [x] fcntl12_64
+- [ ] fcntl13：需要支持 flock
+- [ ] fcntl13_64：需要支持 flock
+- [ ] fcntl14：需要支持 flock
+- [ ] fcntl14_64：需要支持 flock
+- [ ] fcntl15：需要支持 flock failed 7 pass 5
+- [ ] fcntl15_64：需要支持 flock failed 7 pass 5
+- [x] fcntl16: no summary
+- [x] fcntl16_64: no summary
+- [ ] fcntl17：需要支持 flock
+- [ ] fcntl17_64：需要支持 flock
+- [ ] fcntl18：需要支持 flock
+- [ ] fcntl18_64：需要支持 flock
+- [ ] fcntl19：需要支持 flock
+- [ ] fcntl19_64：需要支持 flock
+- [ ] fcntl20：需要支持 flock
+- [ ] fcntl20_64：需要支持 flock
+- [ ] fcntl21：需要支持 flock
+- [ ] fcntl21_64：需要支持 flock
+- [ ] fcntl22: missing fcntlop
+- [ ] fcntl22_64: missing fcntlop
+- [x] fcntl23: no sum
+- [x] fcntl23_64: no sum
+- [ ] fcntl24: flock
+- [ ] fcntl24_64: flock
+- [ ] fcntl25: flock
+- [ ] fcntl25_64: flock
+- [ ] fcntl26: flock
+- [ ] fcntl26_64: flock
+- [ ] fcntl27: flock
+- [ ] fcntl27_64: flock
+- [x] fcntl29
+- [x] fcntl29_64
+- [ ] fcntl30: /proc/sys/fs/pipe-max-size
+- [ ] fcntl30_64: /proc/sys/fs/pipe-max-size
+- [ ] fcntl31: missing fcntlop
+- [ ] fcntl31_64
+- [ ] fcntl32: missing fcntlop
+- [ ] fcntl32_64
+- [ ] fcntl33: /proc/sys/fs/lease-break-time
+- [ ] fcntl33_64
+- [x] fcntl34
+- [x] fcntl34_64
+- [ ] fcntl35: tconf
+- [ ] fcntl35_64
+- [x] fcntl36
+- [x] fcntl36_64
+- [ ] fcntl37: /proc/sys/fs/pipe-max-size
+- [ ] fcntl37_64
+- [ ] fcntl38: Cannot parse kernel .config
+- [ ] fcntl38_64
+- [ ] fcntl39: Cannot parse kernel .config
+- [ ] fcntl39_64
+===================
+
+- [x] fdatasync01: no sum
+- [ ] fdatasync02: no sum
+- [ ] fdatasync03: no device
+- [ ] fgetxattr01: no device
+- [ ] fgetxattr02: mountpoint?
+- [ ] fgetxattr03: ?
+- [ ] find_portbundle
+- [ ] finit_module01: broke
+- [ ] finit_module02: failed
+- [ ] flistxattr01: failed
+- [ ] flistxattr02: failed
+- [x] flistxattr03
+- [ ] float_bessel
+- [ ] float_exp_log
+- [ ] float_iperb
+- [ ] float_power
+- [ ] float_trigo
+- [x] flock01
+- [ ] flock02: all faild
+- [x] flock03: pass 1 broken 1
+- [x] flock04: pass 3 failed 3
+- [x] flock06: pass 3 failed 1
+
+===== fork ==========
+- [x] fork01
+- [x] fork03
+- [x] fork04
+- [x] fork07
+- [x] fork08
+- [ ] fork09 : no output?
+- [ ] fork10 : read(3,0x3fffffe860,1024) failed
+- [ ] fork13 : /proc/sys/kernel/pid_max: ENOENT (2)
+- [ ] fork14 : skip
+- [ ] fork_exec_loop : 压测
+- [x] fork_procs : 压测 1000 个进程
+- [x] fpathconf01
+
+===== fsxxx ==========
+- [ ] fptest01 : failed without reason?
+- [ ] fptest02
+- [ ] fremovexattr01 : no device
+- [ ] fremovexattr02 : no device
+- [ ] fsconfig01 : no device
+- [ ] fsconfig02 : no device
+- [ ] fsconfig03 : no device
+- [ ] fsetxattr01 : no device
+- [ ] fsetxattr02 : no device
+- [ ] fs_fill : no device
+- [ ] fsmount01 : no device
+- [ ] fsmount02 : no device
+- [ ] fsopen01 : no device
+- [ ] fsopen02 : no device
+- [ ] fspick01 : no device
+- [ ] fspick02 : no device
+- [x] fstat02 : st_mode != 420
+- [x] fstat02_64
+- [x] fstat03
+- [x] fstat03_64
+- [x] fstatat01 : no sum
+- [ ] fstatfs01 : no dev
+- [ ] fstatfs01_64
+- [x] fstatfs02 : pass 1 failed 1
+- [x] fstatfs02_64
+- [ ] fsx-linux : not support tmp file truncate
+- [ ] fsync01 : no dev
+- [ ] fsync02 : /proc/cpuinfo
+- [ ] fsync03 : no mknod
+- [ ] fsync04 : no dev
+- [ ] ftest01 : failed, no sum
+- [ ] ftest02 : failed
+- [ ] ftest03 : failed
+- [ ] ftest04 : failed
+- [ ] ftest05 : failed
+- [ ] ftest06 : failed
+- [ ] ftest07 : failed
+- [ ] ftest08 : failed
+- [x] ftruncate01
+- [x] ftruncate01_64
+- [ ] ftruncate03 : fruncate use a wired dentry?
+- [ ] ftruncate03_64
+- [ ] ftruncate04 : no .config
+- [ ] ftruncate04_64
+
+======= futex =========
+- [ ] futex_cmp_requeue01
+- [ ] futex_cmp_requeue02
+- [x] futex_wait01
+- [ ] futex_wait02: 卡住
+- [ ] futex_wait03
+- [ ] futex_wait04
+- [ ] futex_wait05
+- [ ] futex_wait_bitset01
+- [ ] futex_waitv01
+- [ ] futex_waitv02
+- [ ] futex_waitv03
+- [ ] futex_wake01: failed&broke same as follows
+- [ ] futex_wake02
+- [ ] futex_wake03
+- [ ] futex_wake04
+
+- [ ] futimesat01 : tconf
+- [ ] fw_load
+- [ ] genacos: [ERROR] parent path should be absolute path!
+- [ ] genasin: no ouput
+- [ ] genatan
+- [ ] genatan2
+- [ ] genbessel
+- [ ] genceil
+- [ ] gencos
+- [ ] gencosh
+- [ ] genexp
+- [ ] genexp_log
+- [ ] genfabs
+- [ ] genfloor
+- [ ] genfmod
+- [ ] genfrexp
+- [ ] genhypot
+- [ ] geniperb
+- [ ] genj0
+- [ ] genj1
+- [ ] genldexp
+- [ ] genlgamma
+- [ ] genload
+- [ ] genlog
+- [ ] genlog10
+- [ ] genmodf
+- [ ] genpow
+- [ ] genpower
+- [ ] gensin
+- [ ] gensinh
+- [ ] gensqrt
+- [ ] gentan
+- [ ] gentanh
+- [ ] gentrigo
+- [ ] geny0
+- [ ] geny1
+- [ ] getaddrinfo_01
+- [ ] getcontext01
+- [ ] getcpu01
+- [ ] getcwd01 : kernel trap
+- [ ] getcwd02 : failed
+- [ ] getcwd03 : failed
+- [x] getcwd04 : 压测
+- [ ] getdents01 : no dangle symlink
+- [ ] getdents02 : failed
+- [x] getdomainname01
+
+======== gid & uid ========
+- [ ] getegid01 : /proc/self/status
+- [ ] getegid02 : f
+- [x] geteuid01
+- [x] geteuid02 : /proc/self/status pass1 failed 1
+- [ ] getgid01 : f
+- [ ] getgid03 : f
+- [ ] getgroups01: f no summary
+- [ ] getgroups03
+- [ ] gethostbyname_r01:faild
+- [ ] gethostid01
+- [x] gethostname01
+- [ ] gethostname02: len is smaller than the actual size succeeded
+- [ ] get_ifname
+- [x] getitimer01
+- [x] getitimer02
+- [ ] get_mempolicy01:  test requires libnuma development packages with LIBNUMA_API_VERSION >= 2
+- [ ] get_mempolicy02
+- [x] getpagesize01
+- [x] getpeername01
+- [x] getpgid01 1failed : Failed to open FILE '/proc/1/stat' for reading: ENOENT (2)
+- [ ] getpgid02 :Failed to open FILE '/proc/sys/kernel/pid_max'
+- [x] getpgrp01
+- [ ] getpid01: /proc/sys/kernel/pid_max'
+- [x] getpid02
+- [ ] getppid01: /proc/sys/kernel/pid_max'
+- [x] getppid02
+- [ ] getpriority01: p2 failed 2
+- [x] getpriority02: p2 failed 2
+- [x] getrandom01
+- [x] getrandom02
+- [x] getrandom03
+- [x] getrandom04
+- [x] getrandom05: failed 1:  flag is invalid succeeded
+- [ ] getresgid01: fail no summary 150
+- [ ] getresgid01_16
+- [ ] getresgid02
+- [ ] getresgid02_16
+- [ ] getresgid03
+- [ ] getresgid03_16
+- [ ] getresuid01
+- [ ] getresuid01_16 fail no 148
+- [ ] getresuid02
+- [ ] getresuid02_16
+- [ ] getresuid03
+- [ ] getresuid03_16
+- [x] getrlimit01
+- [x] getrlimit02
+- [ ] getrlimit03: all failed
+- [ ] get_robust_list01: Failed to open FILE '/proc/sys/kernel/pid_max'
+- [x] getrusage01
+- [x] getrusage02: 1skip
+- [ ] getrusage03: Failed to copy
+- [ ] getrusage03_child
+- [ ] getrusage04: cannot open /proc/cpuinfo, not exist
+- [ ] getsid01: getsid(0) failed in parent: ENOSYS (38)
+- [ ] getsid02: failed to open FILE '/proc/sys/kernel/pid_max'
+- [ ] getsockname01: skip 
+- [ ] getsockopt01: skip
+- [ ] getsockopt02: skip
+- [ ] gettid01: Failed to open FILE '/proc/self/status' for reading: ENOENT (2)
+- [x] gettid02
+- [x] gettimeofday01: pass2 failed 1
+- [x] gettimeofday02
+- [x] getuid01
+- [ ] getuid01_16: skip
+- [x] getuid03:Failed to open FILE '/proc/self/status' pass1 broken 1
+- [ ] getuid03_16  skip
+- [ ] getxattr01: failed
+- [ ] getxattr02 : no dev
+- [ ] getxattr03 : no dev
+- [ ] getxattr04 : no dev
+- [ ] getxattr05 : tconf
+- [ ] growfiles
+- [ ] hackbench
+- [ ] hangup01
+- [ ] ht_affinity
+- [ ] ht_enabled
+- [ ] hugefallocate01: hugetlbfs is not supported
+- [ ] hugefallocate02
+- [ ] hugefork01: TCONF: hugetlbfs is not supported
+- [ ] hugefork02
+- [ ] hugemmap01:  Not enough hugepages for testing.
+- [ ] hugemmap02
+- [ ] hugemmap04
+- [ ] hugemmap05
+- [ ] hugemmap06
+- [ ] hugemmap07
+- [ ] hugemmap08
+- [ ] hugemmap09
+- [ ] hugemmap10
+- [ ] hugemmap11
+- [ ] hugemmap12
+- [ ] hugemmap13
+- [ ] hugemmap14
+- [ ] hugemmap15
+- [ ] hugemmap16
+- [ ] hugemmap17
+- [ ] hugemmap18
+- [ ] hugemmap19
+- [ ] hugemmap20
+- [ ] hugemmap21
+- [ ] hugemmap22
+- [ ] hugemmap23
+- [ ] hugemmap24
+- [ ] hugemmap25
+- [ ] hugemmap26
+- [ ] hugemmap27
+- [ ] hugemmap28
+- [ ] hugemmap29
+- [ ] hugemmap30
+- [ ] hugemmap31
+- [ ] hugemmap32
+
+====== shm =======
+- [ ] hugeshmat01
+- [ ] hugeshmat02
+- [ ] hugeshmat03
+- [ ] hugeshmat04
+- [ ] hugeshmat05
+- [ ] hugeshmctl01
+- [ ] hugeshmctl02
+- [ ] hugeshmctl03
+- [ ] hugeshmdt01
+- [ ] hugeshmget01
+- [ ] hugeshmget02
+- [ ] hugeshmget03
+- [ ] hugeshmget05
+
+- [ ] icmp_rate_limit01
+- [x] in6_01: 1skip
+- [ ] in6_02
+- [ ] inh_capped
+- [ ] initialize_if
+- [ ] init_module01
+- [ ] init_module02
+- [ ] inode01
+- [ ] inode02: TBROK: fopen(/proc/cmdline,r) failed: ENOENT (2)
+- [ ] inotify01: 26,27,28, seem stuck?
+- [ ] inotify02: broke
+- [ ] inotify03
+- [ ] inotify04
+- [ ] inotify05
+- [ ] inotify06
+- [ ] inotify07
+- [ ] inotify08
+- [ ] inotify09
+- [ ] inotify10
+- [ ] inotify11
+- [ ] inotify12
+- [x] inotify_init1_01: fialed 1, TBROK: fcntl(0,F_GETFD,...) failed: EBADF (9)
+- [x] inotify_init1_02: like upper
+- [ ] input01: no summary
+- [ ] input02
+- [ ] input03
+- [ ] input04
+- [ ] input05
+- [ ] input06
+- [ ] io_cancel01: no summary
+- [ ] io_cancel02
+- [ ] io_control01: Failed to acquire device
+
+======= ioctl =========
+- [ ] ioctl01 : no dev
+- [ ] ioctl02 : f
+- [ ] ioctl03 : tun
+- [ ] ioctl04 : no dev
+- [ ] ioctl05 : no dev
+- [ ] ioctl06 : no dev
+- [ ] ioctl07 : f
+- [ ] ioctl08 : tconf
+- [ ] ioctl09 : tconf
+- [ ] ioctl_loop01 : no dev
+- [ ] ioctl_loop02 : no dev
+- [ ] ioctl_loop03 : no dev
+- [ ] ioctl_loop04 : no dev
+- [ ] ioctl_loop05 : no dev
+- [ ] ioctl_loop06 : no dev
+- [ ] ioctl_loop07 : no dev
+- [ ] ioctl_ns01 : /proc
+- [ ] ioctl_ns02 : /proc
+- [ ] ioctl_ns03 : /proc
+- [ ] ioctl_ns04 : /proc
+- [ ] ioctl_ns05 : /proc
+- [ ] ioctl_ns06 : /proc
+- [ ] ioctl_ns07 : /proc
+- [ ] ioctl_sg01 : tconf
+- [ ] io_destroy01 : tconf
+- [ ] io_destroy02 : .config
+- [ ] io_getevents01 : .config
+- [ ] io_getevents02 : .config
+- [ ] ioperm01 : .config
+- [ ] ioperm02 : .config
+- [ ] io_pgetevents01 : tconf
+- [ ] io_pgetevents02 : tconf
+- [ ] iopl01 : tconf
+- [ ] iopl02 : tconf
+- [ ] ioprio_get01 : tconf
+- [ ] ioprio_set01 : f
+- [x] ioprio_set02
+- [ ] ioprio_set03 : f
+- [ ] io_setup01 : tconf
+- [ ] io_setup02 : .config
+- [ ] io_submit01 : tconf
+- [ ] io_submit02 : tconf
+- [ ] io_submit03 : tconf
+- [x] io_uring01 : p1 f1
+- [ ] io_uring02 : tconf
+- [ ] kallsyms : /proc
+- [x] kcmp01 : p4 f1
+- [ ] kcmp02 : /proc
+- [x] kcmp03 : p3 f1
+
+====== keyctl ======
+- [ ] keyctl01 : dead loop
+- [ ] keyctl02 : /proc
+- [ ] keyctl03
+- [x] keyctl04
+- [ ] keyctl05 : /lib/module
+- [ ] keyctl06 : f
+- [ ] keyctl07 : 218
+- [ ] keyctl08 : f
+- [ ] keyctl09 : .config
+
+===== kill =======
+- [ ] kill02 : hang
+- [ ] kill03
+- [ ] kill05
+- [ ] kill06
+- [ ] kill07
+- [ ] kill08
+- [ ] kill09
+- [ ] kill10
+- [ ] kill11
+- [ ] kill12
+- [ ] kill13
+- [ ] killall_icmp_traffic
+- [ ] killall_tcp_traffic
+- [ ] killall_udp_traffic
+- [ ] kmsg01
+- [ ] ksm01
+- [ ] ksm02
+- [ ] ksm03
+- [ ] ksm04
+- [ ] ksm05
+- [ ] ksm06
+- [ ] ksm07
+
+====== lxxx =======
+- [x] lchown01 : no sum
+- [x] lchown02 : no sum
+- [ ] lchown03 : no dev
+
+- [ ] leapsec01 : syscall 112 we can support
+- [x] lftest
+- [ ] lgetxattr01 : f
+- [ ] lgetxattr02 : f
+
+===== link ========
+- [x] link02
+- [x] link04 : p 5 f 9
+- [x] link05
+- [ ] link08 : f
+- [ ] linkat01 : f
+- [ ] linkat02 : no dev
+
+- [x] listen01 : no sum
+- [ ] listxattr01 : f
+- [ ] listxattr02 : f
+- [x] listxattr03
+- [ ] llistxattr01 : f
+- [ ] llistxattr02 : f
+- [x] llistxattr03
+
+====== lseek =======
+- [x] llseek01 : pass 1 f 1
+- [x] llseek02
+- [x] llseek03
+- [ ] lremovexattr01 : no dev
+- [x] lseek01
+- [ ] lseek02 : mknodat
+- [ ] lseek07 : no dev
+- [ ] lseek11 : seek hole .. we can support
+- [ ] lstat01 : f
+- [ ] lstat01_64 : f
+- [ ] lstat02 : f
+- [ ] lstat02_64 : f
+
+======= madvise ========
+- [x] madvise01 : p 20
+- [ ] madvise02 : hang
+- [ ] madvise03 : f
+- [x] madvise05
+- [ ] madvise06 : /proc
+- [ ] madvise07 : f
+- [ ] madvise08 : tconf
+- [ ] madvise09 : tconf
+- [x] madvise10 : p 12 f 2
+- [ ] madvise11 : .config
+
+- [ ] mallinfo01 : tconf
+- [ ] mallinfo02 : tconf
+- [ ] mallinfo2_01 : tconf
+
+- [ ] mallocstress : stress
+- [ ] mallopt01
+- [ ] max_map_count
+- [ ] mbind01
+- [ ] mbind02
+- [ ] mbind03
+- [ ] mbind04
+- [ ] mc_member_test
+- [ ] mc_recv
+- [ ] mc_send
+- [ ] mc_verify_opts
+- [ ] mc_verify_opts_error
+- [ ] meltdown
+- [ ] mem02
+- [ ] membarrier01
+- [ ] memcg_process
+- [ ] memcg_process_stress
+- [ ] memcg_test_1
+- [ ] memcg_test_2
+- [ ] memcg_test_3
+- [ ] memcg_test_4
+- [ ] memcmp01
+- [ ] memcontrol01
+- [ ] memcontrol02
+- [ ] memcontrol03
+- [ ] memcontrol04
+- [ ] memcpy01
+- [ ] memctl_test01 : panic in sys_kill
+- [ ] memfd_create01 : tconf
+- [ ] memfd_create02 : tconf
+- [ ] memfd_create03 : tconf
+- [ ] memfd_create04 : tconf
+- [x] memset01
+- [x] mesgq_nstest : p1 f1
+- [ ] mincore01 : f
+- [x] mincore02 : p1 f1
+- [x] mincore03 : p1 f1
+- [ ] mincore04 : f
+- [ ] min_free_kbytes : f
+
+===== mkdir =====
+- [ ] mkdir02
+- [ ] mkdir03
+- [ ] mkdir04
+- [x] mkdir05 : failed unlink pass1 failed1
+- [ ] mkdir09 : no dev
+- [x] mkdirat01
+- [ ] mkdirat02 : failed symlink
+
+===== mknod =======
+- [ ] mknod01
+- [ ] mknod02
+- [ ] mknod03
+- [ ] mknod04
+- [ ] mknod05
+- [ ] mknod06
+- [ ] mknod07
+- [ ] mknod08
+- [ ] mknod09
+- [ ] mknodat01
+- [ ] mknodat02
+
+===== mlock ======
+- [x] mlock01
+- [ ] mlock02 : f
+- [ ] mlock03 : f
+- [x] mlock04
+- [ ] mlock05 : /proc
+- [ ] mlock201 : /proc
+- [ ] mlock202 : f
+- [ ] mlock203 : f
+- [x] mlockall01 : no sum
+- [ ] mlockall02 : f
+- [ ] mlockall03 : f
+
+===== mmap =======
+- [ ] mmap001 : no sum
+- [x] mmap01 : no sum
+- [x] mmap02 
+- [ ] mmap03 : page fault
+- [ ] mmap04 : /proc
+- [x] mmap05
+- [x] mmap06 : p 2 f 6
+- [ ] mmap08 : f
+- [x] mmap09
+- [ ] mmap1 : 压测?
+- [ ] mmap10 : /dev/zero panic
+- [x] mmap11 : no sum
+- [ ] mmap12 : /proc
+- [ ] mmap13 : f
+- [ ] mmap14 : f
+- [ ] mmap15 : panic
+- [ ] mmap16 : tconf
+- [ ] mmap17 : f
+- [ ] mmap18 : f
+- [x] mmap19
+- [ ] mmap20 : f
+- [ ] mmap3 : 压测
+- [ ] mmap-corruption01
+- [ ] mmapstress01
+- [ ] mmapstress02
+- [ ] mmapstress03
+- [ ] mmapstress04
+- [ ] mmapstress05
+- [ ] mmapstress06
+- [ ] mmapstress07
+- [ ] mmapstress08
+- [ ] mmapstress09
+- [ ] mmapstress10
+
+
+- [ ] mmstress : no sum
+- [ ] mount01 : no dev
+- [ ] mount02 : no dev
+- [ ] mount03 : no dev
+- [ ] mount03_suid_child
+- [ ] mount04 : no dev
+- [ ] mount05 : no dev
+- [ ] mount06 : no dev
+- [ ] mount07 : no dev
+- [ ] mountns01 : .config
+- [ ] mountns02 : .config
+- [ ] mountns03 : .config
+- [ ] mountns04 : .config
+- [ ] mount_setattr01 : no dev
+- [ ] move_mount01 : no dev
+- [ ] move_mount02 : no dev
+- [ ] move_pages01 : tconf
+- [ ] move_pages02 : tconf
+- [ ] move_pages03 : tconf
+- [ ] move_pages04 : tconf
+- [ ] move_pages05 : tconf
+- [ ] move_pages06 : tconf
+- [ ] move_pages07 : tconf
+- [ ] move_pages09 : tconf
+- [ ] move_pages10 : tconf
+- [ ] move_pages11 : tconf
+- [ ] move_pages12 : tconf
+
+- [ ] mprotect01 : p1 f2 no sum
+- [ ] mprotect02 : f
+- [x] mprotect03 : no sum
+- [x] mprotect04 : no sum
+- [x] mprotect05
+
+- [ ] mq_notify01
+- [ ] mq_notify02
+- [ ] mq_notify03
+- [ ] mqns_01
+- [ ] mqns_02
+- [ ] mqns_03
+- [ ] mqns_04
+- [ ] mq_open01
+- [ ] mq_timedreceive01
+- [ ] mq_timedsend01
+- [ ] mq_unlink01
+
+- [ ] mremap01 : f
+- [x] mremap02 : no sum
+- [ ] mremap03 : f
+- [ ] mremap04 : dead lock
+- [ ] mremap05 : p2 f3 no sum
+- [ ] mremap06 : f
+
+- [ ] msg_comm
+- [ ] msgctl01
+- [ ] msgctl02
+- [ ] msgctl03
+- [ ] msgctl04
+- [ ] msgctl05
+- [ ] msgctl06
+- [ ] msgctl12
+- [ ] msgget01
+- [ ] msgget02
+- [ ] msgget03
+- [ ] msgget04
+- [ ] msgget05
+- [ ] msgrcv01
+- [ ] msgrcv02
+- [ ] msgrcv03
+- [ ] msgrcv05
+- [ ] msgrcv06
+- [ ] msgrcv07
+- [ ] msgrcv08
+- [ ] msgsnd01
+- [ ] msgsnd02
+- [ ] msgsnd05
+- [ ] msgsnd06
+- [ ] msgstress01
+
+- [ ] msync01
+- [ ] msync02
+- [ ] msync03
+- [ ] msync04
+- [x] mtest01
+
+- [x] munlock01
+- [ ] munlock02 : f
+- [ ] munlockall01 : /proc
+
+- [x] munmap01 : no sum
+- [ ] munmap02 : no sum
+- [ ] munmap03 : hang
+
+- [x] name_to_handle_at01 : p1 f1
+- [ ] name_to_handle_at02 : f
+
+- [ ] nanosleep01 : /proc
+- [ ] nanosleep02 : f
+- [ ] nanosleep04 : time overflow
+
+- [ ] netstress
+- [ ] newuname01
+- [ ] nextafter01
+- [ ] nfs01_open_files
+- [ ] nfs04_create_file
+- [ ] nfs05_make_tree
+- [ ] nfs_flock
+- [ ] nfs_flock_dgen
+- [ ] nft02
+- [ ] nftw01
+- [ ] nftw6401
+- [x] nice01
+- [x] nice02
+- [x] nice03
+- [ ] nice04: failed
+- [ ] nice05: broke
+- [ ] nptl01
+- [ ] ns-echoclient
+- [ ] ns-icmp_redirector
+- [ ] ns-icmpv4_sender
+- [ ] ns-icmpv6_sender
+- [ ] ns-igmp_querier
+- [ ] ns-mcast_join
+- [ ] ns-mcast_receiver
+- [ ] ns-tcpclient
+- [ ] ns-tcpserver
+- [ ] ns-udpclient
+- [ ] ns-udpsender
+- [ ] ns-udpserver
+- [ ] oom01
+- [ ] oom02
+- [ ] oom03
+- [ ] oom04
+- [ ] oom05
+
+======= open ========
+- [x] open01 : pass 1 failed 1
+- [x] open02 : pass 1 failed 1
+- [x] open03 : no sum
+- [ ] open04 : no sum
+- [ ] open06 : mknodat
+- [ ] open07 : f
+- [x] open08 : pass 3 failed 3
+- [ ] open09 : f 
+- [x] open10 : pass 2 failed 7
+- [x] open11 : pass 19 failed 9
+- [ ] open12 : no dev
+- [ ] open13 : f
+- [ ] open14 : f
+- [x] openat01
+- [ ] openat02 : no sum
+- [ ] openat03 : f
+- [ ] openat04 : no dev
+- [ ] openat201 : no openat2
+- [ ] openat202 : f
+- [ ] openat203 : no openat2
+- [ ] open_by_handle_at01
+- [ ] open_by_handle_at02
+- [ ] open_tree01 : no dev
+- [ ] open_tree02 : no dev
+
+
+- [ ] output_ipsec_conf
+- [ ] overcommit_memory
+- [x] page01: pass no sum
+- [x] page02: pass no sum
+- [x] pathconf01
+- [ ] pathconf02: b 1
+- [ ] pause01: '/proc/37/stat'
+- [ ] pause02
+- [ ] pause03
+- [ ] pcrypt_aead01: broke
+- [ ] pec_listener
+- [ ] perf_event_open01
+- [ ] perf_event_open02: skip
+- [ ] perf_event_open03: skip
+- [ ] personality01
+- [x] personality02
+- [ ] pidfd_getfd01
+- [ ] pidfd_getfd02
+- [ ] pidfd_open01
+- [ ] pidfd_open02
+- [ ] pidfd_open03
+- [ ] pidfd_open04
+- [ ] pidfd_send_signal01
+- [ ] pidfd_send_signal02
+- [ ] pidfd_send_signal03
+- [ ] pidns01
+- [ ] pidns02
+- [ ] pidns03
+- [ ] pidns04
+- [ ] pidns05
+- [ ] pidns06
+- [ ] pidns10
+- [ ] pidns12
+- [ ] pidns13
+- [ ] pidns16
+- [ ] pidns17
+- [ ] pidns20
+- [ ] pidns30
+- [ ] pidns31
+- [x] pidns32
+- [ ] pids_task1
+- [ ] pids_task2
+
+======= pipe ======
+- [x] pipe01
+- [ ] pipe02 : f
+- [ ] pipe03 : f
+- [x] pipe04 : no sum
+- [x] pipe05 : no sum
+- [x] pipe06
+- [ ] pipe07 : proc/
+- [ ] pipe08 : f
+- [x] pipe09 : no sum 
+- [x] pipe10
+- [x] pipe11 : 70 pass!
+- [ ] pipe12 : ioctl
+- [ ] pipe13 : /proc
+- [x] pipe14
+- [ ] pipe15 : /proc
+- [x] pipe2_01 : pass 4 failed 3
+- [ ] pipe2_02 : copy failed
+- [ ] pipe2_04 : tconf
+- [ ] pipeio : need semget
+
+
+- [ ] pivot_root01
+- [ ] pkey01
+- [ ] pm_get_sched_values
+- [x] poll01
+- [ ] poll02 : /proc
+
+======= fadvise =======
+- [x] posix_fadvise01
+- [x] posix_fadvise01_64
+- [ ] posix_fadvise02 : f
+- [ ] posix_fadvise02_64
+- [ ] posix_fadvise03 : p6 f26
+- [ ] posix_fadvise03_64
+- [ ] posix_fadvise04 : f
+- [ ] posix_fadvise04_64
+
+- [ ] ppoll01 : panic
+- [x] prctl01 : p1 f1
+- [ ] prctl02 : f
+- [ ] prctl03
+- [ ] prctl04
+- [ ] prctl05
+- [ ] prctl06
+- [ ] prctl06_execve
+- [ ] prctl07
+- [ ] prctl08
+- [ ] prctl09
+- [ ] prctl10
+
+======== pread ======= failed all
+- [ ] pread01 : f
+- [ ] pread01_64
+- [ ] pread02 : f
+- [ ] pread02_64
+- [ ] preadv01
+- [ ] preadv01_64
+- [ ] preadv02
+- [ ] preadv02_64
+- [ ] preadv03
+- [ ] preadv03_64
+- [ ] preadv201
+- [ ] preadv201_64
+- [ ] preadv202
+- [ ] preadv202_64
+- [ ] preadv203
+- [ ] preadv203_64
+
+- [ ] proc01
+- [ ] process_madvise01
+- [ ] process_vm01
+- [ ] process_vm_readv02
+- [ ] process_vm_readv03
+- [ ] process_vm_writev02
+- [ ] proc_sched_rt01
+- [ ] profil01
+- [ ] prot_hsymlinks
+
+======= pselect ======
+- [ ] pselect01 : /proc
+- [ ] pselect01_64
+- [ ] pselect02 : time overflow
+- [ ] pselect02_64
+- [x] pselect03
+- [x] pselect03_64
+
+
+- [ ] ptem01 : no dev
+- [x] pth_str01 : no sum
+- [x] pth_str02 : no sum
+- [x] pth_str03 : no sum
+- [ ] ptrace01
+- [ ] ptrace02
+- [ ] ptrace03
+- [ ] ptrace04
+- [ ] ptrace05
+- [ ] ptrace06
+- [ ] ptrace07
+- [ ] ptrace08
+- [ ] ptrace09
+- [ ] ptrace10
+- [ ] ptrace11
+- [ ] pt_test
+- [ ] pty01
+- [ ] pty02
+- [ ] pty03
+- [ ] pty04
+- [ ] pty05
+- [ ] pty06
+- [ ] pty07
+
+======= pwrite ====== (we can support pwritev)
+- [ ] pwrite01 : f
+- [ ] pwrite01_64
+- [x] pwrite02 : p1 f4
+- [x] pwrite02_64
+- [x] pwrite03
+- [x] pwrite03_64
+- [x] pwrite04 : p1 f1
+- [x] pwrite04_64
+- [ ] pwritev01
+- [ ] pwritev01_64
+- [ ] pwritev02
+- [ ] pwritev02_64
+- [ ] pwritev03
+- [ ] pwritev03_64
+- [ ] pwritev201
+- [ ] pwritev201_64
+- [ ] pwritev202
+- [ ] pwritev202_64
+
+======== read ======== (support more read syscall)
+- [x] read01
+- [x] read02 : p5 f1
+- [ ] read03 : mknodat
+- [x] read04
+- [ ] readahead01
+- [ ] readahead02
+- [ ] read_all : f
+- [x] readdir01
+- [ ] readdir21 : f
+- [ ] readlink01 : f
+- [ ] readlink03 : f
+- [x] readlinkat01 : p5 f7
+- [x] readlinkat02 : p5 f1
+- [x] readv01: pass 10
+- [x] readv02: p3 f2
+
+
+- [ ] realpath01 : f
+- [ ] reboot01 : shutdown
+- [ ] reboot02 : shutdown
+- [ ] recv01 : panic in sys_kill
+- [ ] recvfrom01 : panic in sys_kill
+- [ ] recvmmsg01 : tconf (socket)
+- [ ] recvmsg01 : tconf (socket)
+- [ ] recvmsg02 : tconf
+- [ ] recvmsg03 : socket EINVAL
+- [ ] remap_file_pages01 : f
+- [ ] remap_file_pages02
+- [ ] removexattr01 : f
+- [ ] removexattr02 : f
+
+====== rename ======
+- [ ] rename01 : no dev
+- [ ] rename03 : no dev
+- [ ] rename04 : no dev
+- [ ] rename05 : no dev
+- [ ] rename06 : no dev
+- [ ] rename07 : no dev
+- [ ] rename08 : no dev
+- [ ] rename09 : f
+- [ ] rename10 : f
+- [ ] rename11 : no dev
+- [ ] rename12 : no dev
+- [ ] rename13 : no dev
+- [x] rename14 : no sum
+- [ ] renameat01 : no dev
+- [x] renameat201 : no sum
+- [ ] renameat202 : f
+
+- [ ] request_key01
+- [ ] request_key02
+- [ ] request_key03
+- [ ] request_key04
+- [ ] request_key05
+
+- [ ] rmdir01 : f
+- [ ] rmdir02 : f
+- [x] rmdir03 : p1 f1
+
+- [ ] rtc01 : no sum
+- [x] rtc02
+
+======== rt sig ========
+- [x] rt_sigaction01 : no sum
+- [x] rt_sigaction02 : no sum
+- [ ] rt_sigaction03 : f
+- [ ] rt_sigprocmask01 : f
+- [ ] rt_sigprocmask02 : f
+- [ ] rt_sigqueueinfo01 : missing syscall
+- [x] rt_sigsuspend01
+
+- [x] sbrk01 : p1 f1
+- [x] sbrk02
+- [ ] sbrk03 : tconf
+
+======== sched =======
+- [x] sched_getaffinity01 : p3 f1
+- [ ] sched_getattr01 : f
+- [ ] sched_getattr02 : f
+- [ ] sched_getparam01 : f
+- [ ] sched_getparam03 : f
+- [ ] sched_get_priority_max01
+- [ ] sched_get_priority_max02
+- [ ] sched_get_priority_min01
+- [ ] sched_get_priority_min02
+- [ ] sched_getscheduler01
+- [ ] sched_getscheduler02
+- [ ] sched_rr_get_interval01
+- [ ] sched_rr_get_interval02
+- [ ] sched_rr_get_interval03
+- [ ] sched_setaffinity01 : f
+- [ ] sched_setattr01 : f
+- [ ] sched_setparam01
+- [ ] sched_setparam02
+- [ ] sched_setparam03
+- [ ] sched_setparam04
+- [ ] sched_setparam05
+- [ ] sched_setscheduler01 : /proc
+- [ ] sched_setscheduler02 : f
+- [ ] sched_setscheduler03 : f
+- [ ] sched_setscheduler04 : tconf
+- [x] sched_yield01 : no sum
+- [ ] sctp_big_chunk : /sys/
+
+====== select ======
+- [ ] select01 : mknodat
+- [ ] select02 : /proc
+- [ ] select03 : user ptr?
+- [ ] select04
+
+======= sem ========
+- [ ] sem_comm
+- [ ] semctl01
+- [ ] semctl02
+- [ ] semctl03
+- [ ] semctl04
+- [ ] semctl05
+- [ ] semctl06
+- [ ] semctl07
+- [ ] semctl08
+- [ ] semctl09
+- [ ] semget01
+- [ ] semget02
+- [ ] semget05
+- [ ] sem_nstest
+- [ ] semop01
+- [ ] semop02
+- [ ] semop03
+- [ ] semop04
+- [ ] semop05
+- [ ] semtest_2ns
+
+====== send =======
+- [ ] send01: panic
+- [ ] send02: skip
+- [x] sendfile02
+- [x] sendfile02_64
+- [x] sendfile03 : p2 f2
+- [x] sendfile03_64
+- [x] sendfile04 
+- [x] sendfile04_64
+- [x] sendfile05
+- [x] sendfile05_64
+- [ ] sendfile06 : f
+- [ ] sendfile06_64
+- [ ] sendfile07 : hang
+- [ ] sendfile07_64
+- [ ] sendfile08 : f
+- [ ] sendfile08_64
+- [ ] sendfile09 : tconf
+- [ ] sendfile09_64
+- [ ] sendmmsg01 : skip
+- [ ] sendmmsg02: skip
+- [ ] sendmsg01: no summary
+- [ ] sendmsg02
+- [ ] sendmsg03
+- [ ] sendto01: panic
+- [ ] sendto02
+- [ ] sendto03
+
+- [ ] setdomainname01: 162
+- [ ] setdomainname02: 
+- [ ] setdomainname03
+- [ ] setegid01
+- [ ] setegid02
+- [ ] setfsgid01
+- [ ] setfsgid02
+- [ ] setfsgid03
+- [ ] setfsuid01
+- [ ] setfsuid02
+- [ ] setfsuid03
+- [ ] setfsuid04
+- [x] setgid01
+- [ ] setgid02： broken
+- [x] setgid03: 1p 1f
+- [x] setgroups01
+- [x] setgroups02: 2fail
+- [ ] setgroups03
+- [ ] setgroups04
+- [ ] sethostname01: 161 ,fail
+- [ ] sethostname02
+- [ ] sethostname03
+- [ ] set_ipv4addr
+- [x] setitimer01: 1 broken timedout
+- [x] setitimer02
+- [ ] set_mempolicy01
+- [ ] set_mempolicy02
+- [ ] set_mempolicy03
+- [ ] set_mempolicy04
+- [ ] set_mempolicy05
+- [ ] setns01: 268
+- [ ] setns02
+- [x] setpgid01: no sum
+- [ ] setpgid02: '/proc/sys/kernel/pid_max
+- [ ] setpgid03 failed
+- [ ] setpgid03_child
+- [x] setpgrp01: no sum
+- [x] setpgrp02
+- [x] setpriority01: 2
+- [x] setpriority02: 2
+- [x] setregid01
+- [ ] setregid01_16
+- [ ] setregid02: failed 12
+- [ ] setregid02_16
+- [x] setregid03: p 8 failed 14
+- [ ] setregid03_16
+- [x] setregid04: p 5 failed 4
+- [ ] setregid04_16
+- [ ] setresgid01
+- [ ] setresgid01_16
+- [ ] setresgid02
+- [ ] setresgid02_16
+- [ ] setresgid03
+- [ ] setresgid03_16
+- [ ] setresgid04
+- [ ] setresgid04_16: above all broke & failed
+- [ ] setresuid01
+- [ ] setresuid01_16
+- [ ] setresuid02
+- [ ] setresuid02_16
+- [ ] setresuid03
+- [ ] setresuid03_16
+- [x] setresuid04: p1 fail 2
+- [ ] setresuid04_16
+- [x] setresuid05: p 1 f 1
+- [ ] setresuid05_16
+- [x] setreuid01
+- [ ] setreuid01_16
+- [ ] setreuid02: f
+- [ ] setreuid02_16
+- [x] setreuid03: 1 b
+- [ ] setreuid03_16
+- [x] setreuid04: 2 fail
+- [ ] setreuid04_16
+- [x] setreuid05: 1 b
+- [ ] setreuid05_16
+- [ ] setreuid06: 3 failed
+- [ ] setreuid06_16
+- [x] setreuid07: 1 p 2 f
+- [ ] setreuid07_16
+
+====== rlimit ======
+- [ ] setrlimit01 : p2 f2 no sum
+- [x] setrlimit02 : p1 f1
+- [ ] setrlimit03 : f
+- [x] setrlimit04
+- [x] setrlimit05
+- [ ] setrlimit06 : hang
+- [x] set_robust_list01 : p2 no sum
+- [ ] setsid01 : p1 f2 no sum
+
+======sockopts======
+- [ ] setsockopt01: now not supported,the follows the follows
+- [ ] setsockopt02
+- [ ] setsockopt03
+- [ ] setsockopt04
+- [ ] setsockopt05
+- [ ] setsockopt06
+- [ ] setsockopt07
+- [ ] setsockopt08
+- [ ] setsockopt09
+- [ ] setsockopt10
+
+- [ ] set_thread_area01 : tconf
+- [x] set_tid_address01 : no sum
+- [x] settimeofday01 : p1 f1
+- [x] settimeofday02 : p2 f1
+- [x] setuid01
+- [ ] setuid03 : f
+- [ ] setuid04 : f
+- [ ] setxattr01 : no dev
+- [x] setxattr02 : p2 f5
+- [ ] setxattr03 : f
+- [ ] sgetmask01 : tconf
+
+======= shm ========
+- [ ] shmat01 : panic
+- [ ] shmat02
+- [ ] shmat03
+- [ ] shmat04
+- [ ] shmat1
+- [ ] shm_comm
+- [ ] shmctl01
+- [ ] shmctl02
+- [ ] shmctl03
+- [ ] shmctl04
+- [ ] shmctl05
+- [ ] shmctl06
+- [ ] shmctl07
+- [ ] shmctl08
+- [ ] shmdt01
+- [ ] shmdt02
+- [ ] shmem_2nstest
+- [ ] shmget02
+- [ ] shmget03
+- [ ] shmget04
+- [ ] shmget05
+- [ ] shmget06
+- [ ] shmnstest
+- [ ] shmt02
+- [ ] shmt03
+- [ ] shmt04
+- [ ] shmt05
+- [ ] shmt06
+- [ ] shmt07
+- [ ] shmt08
+- [ ] shmt09
+- [ ] shmt10
+- [ ] shm_test : panic
+
+======= signal ======= (we can use it to test our signal implement)
+- [x] sigaction01 : no sum
+- [x] sigaction02 : no sum pass 1 failed 5
+- [x] sigaltstack01 : no sum
+- [x] sigaltstack02 : no sum
+- [ ] sighold02 : f
+- [ ] signal01 : /proc/...
+- [x] signal02 : pass 1 failed 2 (long syscall?)
+- [x] signal03
+- [x] signal04
+- [x] signal05
+- [ ] signalfd01 : syscall 74
+- [ ] signalfd4_01 : we can support this
+- [ ] signalfd4_02 : we can support this
+- [x] sigpending02
+- [x] sigprocmask01 : no sum
+- [ ] sigrelse01 : f
+- [ ] sigsuspend01 : f
+- [ ] sigtimedwait01 : panic
+- [x] sigwait01
+- [ ] sigwaitinfo01 : panic
+- [ ] snd_seq01 : /proc/sys
+- [ ] snd_timer01 : /proc/sys
+
+======= socket ======= (not tested)
+- [x] socket01 : pass 6 failed 3
+- [ ] socket02
+- [ ] socketcall01
+- [ ] socketcall02
+- [ ] socketcall03
+- [x] socketpair01 : pass 3 failed 7
+- [x] socketpair02 : pass 2 failed 2
+- [ ] sockioctl01: f
+
+======= splice =======
+- [ ] splice01 : read failed
+- [x] splice02
+- [ ] splice03 : we can support this
+- [ ] splice04 : hang
+- [ ] splice05 : f
+- [ ] splice06 : tconf
+- [ ] splice07 : panic
+- [ ] splice08 : tconf
+- [ ] splice09 : tconf
+
+- [ ] squashfs01 : tconf
+- [ ] ssetmask01 : tconf
+- [ ] stack_clash : /proc/cmdline
+- [x] stack_space : no sum
+- [ ] starvation : stress
+- [x] stat01: pass 10 failed 2
+- [x] stat01_64 : pass 10 failed 2
+- [x] stat02 : pass 1 failed 1
+- [x] stat02_64 : wrong size
+- [ ] stat03 : f
+- [ ] stat03_64 : f
+- [ ] statfs01 : dev
+- [ ] statfs01_64 : no dev
+- [ ] statfs02 : f
+- [ ] statfs02_64 : f
+- [ ] statfs03 : f
+- [ ] statfs03_64 : f
+- [ ] statvfs01 : no dev
+- [ ] statvfs02 : f
+- [x] statx01 : pass 6 failed 2
+- [x] statx02
+- [x] statx03 : pass 5 failed 2
+- [ ] statx04 : no dev
+- [ ] statx05 : tconf
+- [ ] statx06 : no dev
+- [ ] statx07 : tconf
+- [ ] statx08 : no dev
+- [ ] statx09 : .config
+- [ ] statx10 : no dev
+- [ ] statx11 : no dev
+- [ ] statx12 : no dev
+- [ ] stime01 : f
+- [ ] stime02 : should failed
+- [ ] stream01 : no sum
+- [ ] stream02 : no sum
+- [ ] stream03 : no sum
+- [ ] stream04 : no sum
+- [ ] stream05 : no sum
+- [x] string01 : no sum
+- [ ] symlink01 : f no sum
+- [ ] symlink02 : f
+- [ ] symlink03 : pass 2 failed 4 error code
+- [x] symlink04 : pass 1 failed 2
+- [ ] symlinkat01 : f
+- [ ] sync01 :  no dev
+- [ ] sync_file_range01
+- [ ] sync_file_range02
+- [ ] syncfs01 : no dev
+- [x] syscall01
+- [x] sysconf01 : no sum
+- [ ] sysctl01 : tconf
+- [ ] sysctl03 : tconf
+- [ ] sysctl04 : tconf
+- [ ] sysfs01 : tconf
+- [ ] sysfs02 : tconf
+- [ ] sysfs03 : tconf
+- [ ] sysfs04 : tconf
+- [ ] sysfs05 : tconf
+- [x] sysinfo01 : no sum
+- [ ] sysinfo02 : panic
+- [ ] sysinfo03 : .config
+- [ ] syslog11 : /proc/sys/kernel/printk:
+- [ ] syslog12 : failed
+- [ ] tee01
+- [ ] tee02
+- [x] tgkill01
+- [ ] tgkill02 : tgkill() should have failed with EAGAIN: SUCCESS (0)
+- [x] tgkill03 : pass 5 failed 1
+
+======== time ========
+- [x] time01
+- [ ] timens01 : .config
+- [ ] timer_delete01 : 107 syscall
+- [ ] timer_delete02 : 111
+- [ ] timerfd01 : 85
+- [ ] timerfd02 : 85
+- [ ] timerfd04 : .config
+- [ ] timerfd_create01 : 85
+- [ ] timerfd_gettime01 : 85
+- [ ] timerfd_settime01 : 85
+- [ ] timerfd_settime02 : /proc/sys/kernel/tainted
+- [ ] timer_getoverrun01 : 107
+- [ ] timer_gettime01 : 107
+- [ ] timer_settime01 : 107
+- [ ] timer_settime02 : 107
+- [ ] timer_settime03 : 107
+- [x] times01
+- [ ] times03 : tms_time wrong
+- [ ] time-schedule : 230 syscall
+- [x] tkill01
+- [ ] tkill02 : /proc/sys/kernel/pid_max
+- [ ] truncate02 : not support truncate
+- [ ] truncate02_64
+- [ ] truncate03 : symlink
+- [ ] truncate03_64
+
+- [ ] uaccess : tconf
+- [ ] uevent01 : tconf
+- [ ] uevent02 : tconf
+- [ ] uevent03 : tconf
+- [x] ulimit01 : no sum
+- [ ] umask01 : not support umask
+- [ ] umount01 : no dev
+- [ ] umount02 : no dev
+- [ ] umount03 : no dev
+- [ ] umount2_01 : no dev
+- [ ] umount2_02 : no dev
+- [x] uname01
+- [ ] uname02 : panic
+- [ ] uname04
+- [x] unlink05 : pass 1 failed 1
+- [x] unlink07 : pass 5 failed 1
+- [ ] unlink08 : failed
+- [ ] unlink09 : ioctl failed
+- [x] unlinkat01 : pass 5 failed 2
+- [ ] unshare01 : no share syscall
+- [ ] unshare02 : no share syscall
+- [ ] userfaultfd01: failed on ioctl
+- [ ] userns01 : libcap
+- [ ] userns02 : .config
+- [ ] userns03 : .config
+- [ ] userns04 : .config
+- [ ] userns05 : .config
+- [ ] userns06 : tconf
+- [ ] userns06_capcheck : LTP_IPC_PATH is not defined
+- [ ] userns07 : .config
+- [ ] userns08 : .config
+- [ ] ustat01 : tconf
+- [ ] ustat02 : tconf
+- [ ] utime01 : no dev
+- [ ] utime02 : no dev
+- [ ] utime03 : no dev
+- [ ] utime04 : no dev
+- [ ] utime05 : no dev
+- [x] utime06 : pass 1 failed 3
+- [x] utime07 : pass 3 failed 1
+- [ ] utimensat01 : no dev
+- [x] utimes01: pass 2 failed 1
+- [x] utsname01
+- [ ] utsname02 : failed
+- [ ] utsname03 : not support
+- [x] utsname04
+- [ ] verify_caps_exec
+- [ ] vfork
+- [ ] vfork01
+- [ ] vfork02
+- [ ] vhangup01
+- [ ] vhangup02
+- [ ] vma01
+- [ ] vma02
+- [ ] vma03
+- [ ] vma04 : 
+- [ ] vmsplice01: read failed
+- [ ] vmsplice02: should failed
+- [ ] vmsplice03: vmsplice() didn't write anything
+- [ ] vmsplice04: not support
+- [ ] vsock01 : .config
+
+====== wait ============
+- [x] wait01
+- [x] wait02
+- [x] wait401 : pass 2 failed 1
+- [ ] wait402 : /proc/...
+- [ ] wait403 : /proc/...
+- [ ] waitid01
+- [ ] waitid02
+- [ ] waitid03
+- [ ] waitid04
+- [ ] waitid05
+- [ ] waitid06
+- [ ] waitid07
+- [ ] waitid08
+- [ ] waitid09
+- [ ] waitid10
+- [ ] waitid11
+- [x] waitpid01
+- [x] waitpid03
+- [ ] waitpid04 : wrong error code
+- [ ] waitpid06 : loop or stuck, failed the check
+- [ ] waitpid07 : same
+- [ ] waitpid08 : same
+- [ ] waitpid09 : same
+- [ ] waitpid10 : same
+- [ ] waitpid11 : same
+- [ ] waitpid12 : [sys_waitpid]: not implement
+- [ ] waitpid13 : [sys_waitpid]: not implement
+
+===== wqueue (failed all) =====
+- [ ] wqueue01
+- [ ] wqueue02
+- [ ] wqueue03
+- [ ] wqueue04
+- [ ] wqueue05
+- [ ] wqueue06
+- [ ] wqueue07
+- [ ] wqueue08
+- [ ] wqueue09
+
+====== write =========
+- [x] write01
+- [x] write02
+- [ ] write03: kernel trap
+- [ ] write04: open .4
+- [ ] write05: kernel trap
+- [x] write06: wrong size
+- [x] writetest: no sum
+- [ ] writev01: kernel trap
+- [ ] writev02: efault
+- [ ] writev03: no device
+- [ ] writev05: efault
+- [x] writev06: no sum
+- [ ] writev07: kernel trap
+

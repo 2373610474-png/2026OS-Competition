@@ -1,0 +1,31 @@
+# Makefile for Chronix
+
+include mk/config.mk
+include mk/kernel.mk
+include mk/fs.mk
+include mk/qemu.mk
+include mk/user.mk
+include mk/tests.mk
+include mk/utils.mk
+
+env:
+	(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)
+	cargo install cargo-binutils
+	rustup component add rust-src
+	rustup component add llvm-tools-preview
+
+run: $(KERNEL_BIN)
+	$(call building, "cp $(DISK_IMG) to $(DISK_IMG_COPY)")
+	@cp $(DISK_IMG) $(DISK_IMG_COPY)
+	$(QEMU) $(QEMU_ARGS) $(QEMU_RUN_ARGS)
+
+clean:
+	@cd os && CARGO_TARGET_DIR=target cargo clean 
+	@cd user && CARGO_TARGET_DIR=target cargo clean
+	@cargo clean
+	@sudo rm -f $(DISK_IMG)
+	@sudo rm -f $(DISK_IMG_COPY)
+	@sudo rm -rf mnt
+	@sudo rm -rf testcase
+
+.PHONY: build env run-inner run clean $(KERNEL_BIN)

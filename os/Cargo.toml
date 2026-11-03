@@ -1,0 +1,43 @@
+[package]
+name = "os"
+version = "0.1.0"
+authors = ["Xiaopac zlc lullabye"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static.workspace = true
+buddy_system_allocator.workspace = true
+bitflags.workspace = true
+log.workspace = true
+spin.workspace = true
+virtio-drivers.workspace = true
+async-task.workspace = true
+paste.workspace = true
+async-trait.workspace = true
+hashbrown.workspace = true
+strum.workspace = true
+rand.workspace = true
+plic.workspace = true
+downcast-rs.workspace = true
+bitmap-allocator.workspace = true
+fdt.workspace = true
+fatfs.workspace = true
+xmas-elf.workspace = true
+lwext4_rust.workspace = true
+smoltcp.workspace = true
+
+# use other cargos in this project
+range-map = { path = "../utils/range-map" }
+segment-tree = { path = "../utils/segment-tree" }
+hal = { path = "../hal" }
+
+
+[features]
+smp = []
+fat32 = []
+net = []
+
+[profile.release]
+debug = true

@@ -1,0 +1,40 @@
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/PACTHEMAN123/ext4fs.git?branch=main"]
+git = "https://github.com/PACTHEMAN123/ext4fs.git"
+branch = "main"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/lullabyeoytl/smoltcp_chronix.git?rev=5ac01e106e3ec6daac84bba40510cf1791f0396c"]
+git = "https://github.com/lullabyeoytl/smoltcp_chronix.git"
+rev = "5ac01e106e3ec6daac84bba40510cf1791f0396c"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/rafalh/rust-fatfs?branch=master"]
+git = "https://github.com/rafalh/rust-fatfs"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/rcore-os/bitmap-allocator.git?branch=main"]
+git = "https://github.com/rcore-os/bitmap-allocator.git"
+branch = "main"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/repnop/fdt.git?branch=master"]
+git = "https://github.com/repnop/fdt.git"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/zlc-dev/xmas-elf?branch=master"]
+git = "https://github.com/zlc-dev/xmas-elf"
+branch = "master"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+# set default build target
+[build]
+target = "riscv64gc-unknown-none-elf"
+[profile.release]
+debug = true
